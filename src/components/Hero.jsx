@@ -31,7 +31,7 @@ function Hero() {
 
           {/* 🌫️ Light overlay */}
           <div className="absolute inset-0 bg-white/20 flex pt-5 justify-center">
-            <h1 className="text-4xl font-bold sm:text-5xl font-bold text-gray-900 drop-shadow-lg text-center px-4 ">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 drop-shadow-lg text-center px-4 ">
               Welcome to the University of Nature
             </h1>
           </div>
