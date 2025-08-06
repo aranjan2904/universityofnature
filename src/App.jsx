@@ -6,21 +6,22 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BlogList from "./components/BlogList";
 import BlogPage from "./pages/BlogPage";
 import ScrollToTop from "./components/scrollToTop";
+import ProgramPage from "./pages/ProgramPage";
+import Programs from "./components/Programs";
 
 function App() {
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Header /> 
       <Routes>
         <Route path="/" element={<> <Hero /><BlogList /> </> }/>
         <Route path="/blog/:id" element={<BlogPage />} />
+        <Route path="/programs" element={<Programs />} />
+        <Route path="/programs/:id" element={<ProgramPage />} />
       </Routes>
-      
-      
-      
       <Footer />
-    </Router>
+    </>
   );
 }
 

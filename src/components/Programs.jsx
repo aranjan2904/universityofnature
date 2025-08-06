@@ -1,86 +1,66 @@
-import blogData from "../data/blogData";
+import programData from "../data/programsData";
 import { Link } from "react-router-dom";
 
-function BlogList() {
+function Programs() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-green-100 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Latest from Our Blog
+            Our Programs
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Stay informed with our latest insights on environmental conservation and sustainability
+            Discover our comprehensive range of programs designed to help you achieve your goals.
           </p>
         </div>
 
-        {/* Blog posts grid - matching Programs card style */}
+        {/* Programs grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogData.map((post) => (
+          {programData.map((program) => (
             <div 
-              key={post.id}
+              key={program.id}
               className="group relative h-96 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:ring-2 hover:ring-blue-500/50"
             >
               {/* Image with gradient overlay */}
               <div className="absolute inset-0">
                 <img 
-                  src={post.image} 
-                  alt={post.title} 
+                  src={program.img} 
+                  alt={program.title} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               </div>
 
-              {/* Content overlay - matching Programs style */}
+              {/* Content overlay */}
               <div className="relative h-full flex flex-col justify-end p-6">
                 <div className="mb-4">
                   <h2 className="text-2xl font-bold text-white mb-2">
-                    {post.title}
+                    {program.title}
                   </h2>
                   <p className="text-gray-200 line-clamp-3">
-                    {post.summary}
+                    {program.description}
                   </p>
                 </div>
                 
                 <Link 
-                  to={`/blog/${post.id}`}
+                  to={`/programs/${program.id}`}
                   className="inline-block w-full"
                 >
                   <button className="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform group-hover:scale-[1.02]">
-                    Read Article
+                    Explore Program
                   </button>
                 </Link>
               </div>
 
-              {/* Hover effect indicator - matching Programs style */}
+              {/* Hover effect indicator */}
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-400/30 rounded-xl pointer-events-none transition-all duration-300" />
-
-              {/* Optional date badge */}
-              {post.date && (
-                <span className="absolute top-4 left-4 px-3 py-1 text-xs font-semibold text-white bg-black/50 rounded-full backdrop-blur-sm">
-                  {post.date}
-                </span>
-              )}
             </div>
           ))}
-        </div>
-
-        {/* View all button */}
-        <div className="text-center mt-16">
-          <Link
-            to="/blog"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gray-900 hover:bg-gray-800 transition-colors duration-200"
-          >
-            View All Articles
-            <svg className="w-5 h-5 ml-2 -mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </Link>
         </div>
       </div>
     </div>
   );
 }
 
-export default BlogList;
+export default Programs;
