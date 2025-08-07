@@ -8,6 +8,7 @@ import BlogPage from "./pages/BlogPage";
 import ScrollToTop from "./components/scrollToTop";
 import ProgramPage from "./pages/ProgramPage";
 import Programs from "./components/Programs";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/programs" element={<Programs />} />
         <Route path="/programs/:id" element={<ProgramPage />} />
       </Routes>
+      <ContactForm />
       <Footer />
     </>
   );
