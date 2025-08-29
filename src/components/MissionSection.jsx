@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Leaf, Droplets, Trees, Mountain, Globe } from 'lucide-react';
 
@@ -8,31 +7,36 @@ const MissionSection = () => {
       title: "Jal (Water)",
       description: "Protecting and preserving our most precious resource through sustainable water management and conservation initiatives.",
       icon: Droplets,
-      color: "from-blue-400 to-cyan-500"
+      color: "from-blue-400 to-cyan-500",
+      image: "https://images.unsplash.com/photo-1504870712357-65ea720d6078?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Jeevan (Life)",
       description: "Safeguarding all forms of life by promoting biodiversity conservation and sustainable living practices.",
       icon: Leaf,
-      color: "from-green-400 to-emerald-500"
+      color: "from-green-400 to-emerald-500",
+      image: "https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Jungle (Forest)",
       description: "Preserving our forests and ecosystems through reforestation, protection, and sustainable forestry practices.",
       icon: Trees,
-      color: "from-green-500 to-teal-500"
+      color: "from-green-500 to-teal-500",
+      image: "https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Jameen (Land)",
       description: "Restoring and protecting our land resources through sustainable agriculture and soil conservation methods.",
       icon: Mountain,
-      color: "from-amber-400 to-orange-500"
+      color: "from-amber-400 to-orange-500",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Jahan (World)",
       description: "Creating a sustainable world for future generations through global environmental awareness and action.",
       icon: Globe,
-      color: "from-purple-400 to-pink-500"
+      color: "from-purple-400 to-pink-500",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     }
   ];
 
@@ -51,9 +55,24 @@ const MissionSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {missionElements.map((element, index) => (
             <div key={index} className="group">
-              <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col">
                 <div className={`absolute inset-0 bg-gradient-to-br ${element.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                <div className="p-8">
+                
+                {/* Image container */}
+                <div className="h-48 overflow-hidden relative">
+                  <img 
+                    src={element.image} 
+                    alt={element.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      // Fallback in case image fails to load
+                      e.target.src = `https://source.unsplash.com/random/600x400?${element.title.split(' ')[0]}`;
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                
+                <div className="p-8 flex-grow">
                   <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br ${element.color} text-white mb-4`}>
                     <element.icon className="w-8 h-8" />
                   </div>

@@ -119,13 +119,13 @@ function Footer() {
             <div className="lg:col-span-2">
               <h3 className="text-lg font-semibold text-white mb-6">Stay Updated</h3>
               <p className="text-sm text-gray-400 mb-4">Get the latest news about our programs and events.</p>
-              <div className="flex">
+              <div className="flex flex-col">
                 <input 
                   type="email" 
-                  placeholder="Enter your email" 
-                  className="flex-1 px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-l-lg focus:outline-none focus:border-emerald-500 text-white placeholder-gray-400 transition-colors"
+                  placeholder="Enter your email here..." 
+                  className="flex-1 px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg focus:outline-none focus:border-emerald-500 text-white placeholder-gray-400 transition-colors"
                 />
-                <button className="px-4 py-2 bg-emerald-500 text-white rounded-r-lg hover:bg-emerald-600 transition-colors">
+                <button className="px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors">
                   Subscribe
                 </button>
               </div>
