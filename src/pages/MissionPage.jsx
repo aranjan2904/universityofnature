@@ -1,4 +1,3 @@
-import React from 'react';
 import { Leaf, Droplets, Trees, Mountain, Globe, CheckCircle, Users, BookOpen, Target, ArrowRight } from 'lucide-react';
 
 const MissionPage = () => {
@@ -13,7 +12,8 @@ const MissionPage = () => {
         "Water quality monitoring",
         "Community water education"
       ],
-      color: "from-blue-400 to-cyan-500"
+      color: "from-blue-400 to-cyan-500",
+      image: "https://images.unsplash.com/photo-1504870712357-65ea720d6078?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Jeevan (Life)",
@@ -25,7 +25,8 @@ const MissionPage = () => {
         "Biodiversity education programs",
         "Sustainable living practices"
       ],
-      color: "from-green-400 to-emerald-500"
+      color: "from-green-400 to-emerald-500",
+      image: "https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Jungle (Forest)",
@@ -37,7 +38,8 @@ const MissionPage = () => {
         "Sustainable forestry training",
         "Community forest management"
       ],
-      color: "from-green-500 to-teal-500"
+      color: "from-green-500 to-teal-500",
+      image: "https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Jameen (Land)",
@@ -49,7 +51,8 @@ const MissionPage = () => {
         "Land degradation reversal",
         "Organic farming promotion"
       ],
-      color: "from-amber-400 to-orange-500"
+      color: "from-amber-400 to-orange-500",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     },
     {
       title: "Jahan (World)",
@@ -61,7 +64,8 @@ const MissionPage = () => {
         "Environmental education worldwide",
         "Sustainable development goals"
       ],
-      color: "from-purple-400 to-pink-500"
+      color: "from-purple-400 to-pink-500",
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
     }
   ];
 
@@ -136,7 +140,16 @@ const MissionPage = () => {
                   </div>
                 </div>
                 <div className="lg:w-1/2">
-                  <div className="h-80 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200"></div>
+                  <div className="h-80 rounded-2xl overflow-hidden">
+                    <img 
+                      src={element.image} 
+                      alt={element.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.src = `https://source.unsplash.com/random/600x400?${element.title.split(' ')[0]}`;
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             ))}
