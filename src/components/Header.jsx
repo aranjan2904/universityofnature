@@ -2,9 +2,11 @@ import { useState } from "react";
 import logo from "../assets/logo.jpg";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "./LanguageContext";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage } = useLanguage();
 
   const linkClass = ({ isActive }) =>
     `py-2 px-3 transition-all duration-300 rounded-md text-sm font-medium ${
@@ -65,19 +67,44 @@ function Header() {
           </NavLink>
         </nav>
 
-        {/* Hamburger Icon */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
-          >
-            <span className="sr-only">Open main menu</span>
-            {isOpen ? (
-              <X className="block h-6 w-6" aria-hidden="true" />
-            ) : (
-              <Menu className="block h-6 w-6" aria-hidden="true" />
-            )}
-          </button>
+        {/* Right Side: Hamburger + Language Toggle */}
+        <div className="flex items-center space-x-2">
+          {/* Hamburger Icon */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
+            >
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? (
+                <X className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
+          {/* Language Toggle Button */}
+          <div className="ml-2">
+            <div
+              className="relative w-16 h-8 rounded-full cursor-pointer bg-gradient-to-r from-green-500 to-blue-500 p-1 shadow-inner"
+              onClick={() => setLanguage(language === "en" ? "hi" : "en")}
+              aria-label="Toggle language"
+            >
+              <div
+                className={`absolute top-1 w-6 h-6 bg-white rounded-full shadow-lg transform transition-all duration-300 flex items-center justify-center ${
+                  language === "en" ? "left-1" : "left-9"
+                }`}
+              >
+                <span className="text-xs font-bold">
+                  {language === "en" ? "EN" : "HI"}
+                </span>
+              </div>
+              <div className="flex justify-between px-2 h-full items-center text-xs font-medium text-white">
+                <span>EN</span>
+                <span>HI</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

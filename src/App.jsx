@@ -10,9 +10,12 @@ import ProgramPage from "./pages/ProgramPage";
 import Programs from "./components/Programs";
 import ContactForm from "./components/ContactForm";
 import AllBlogsPage from "./pages/AllBlogsPage";
-// import FacultyPage from "./pages/FacultyPage";
-// import FacultyDetailPage from "./pages/FacultyDetailPage";
+import FacultyPage from "./pages/FacultyPage";
+import FacultyDetailPage from "./pages/FacultyDetailPage";
 import MissionPage from "./pages/MissionPage";
+import RecentGallery from "./components/RecentGallery";
+import { LanguageProvider } from "./components/LanguageContext";
+
 
 function App() {
   return (
@@ -20,12 +23,15 @@ function App() {
       <ScrollToTop />
       <Header /> 
       <Routes>
-        <Route path="/" element={<> <Hero /><HomeBlogSection /> </> }/>
+        <Route path="/" element={<><Hero /><HomeBlogSection /></>} />
         <Route path="/blog/:id" element={<BlogPage />} />
         <Route path="/blog" element={<AllBlogsPage />} />
         <Route path="/mission" element={<MissionPage />} />
         <Route path="/programs" element={<Programs />} />
         <Route path="/programs/:id" element={<ProgramPage />} />
+        <Route path="/faculty" element={<FacultyPage />} />
+        <Route path="/faculty/:id" element={<FacultyDetailPage />} />
+        <Route path="/gallery" element={<RecentGallery />} />
       </Routes>
       <ContactForm />
       <Footer />
@@ -33,4 +39,10 @@ function App() {
   );
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
+  );
+}

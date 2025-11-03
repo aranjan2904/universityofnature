@@ -1,7 +1,10 @@
-import programData from "../data/programsData";
+import programsData from "../data/programsData";
 import { Link } from "react-router-dom";
+import { useLanguage } from "./LanguageContext";
 
 function Programs() {
+  const { language } = useLanguage();
+
   return (
     <div className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -18,7 +21,7 @@ function Programs() {
 
         {/* Programs grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {programData.map((program) => (
+          {programsData.map((program) => (
             <div
               key={program.id}
               className="group flex flex-col bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
@@ -37,10 +40,10 @@ function Programs() {
               <div className="p-6 flex flex-col flex-grow">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-800 mb-3">
-                    {program.title}
+                    {program.title[language]}
                   </h2>
                   <p className="text-gray-600 text-sm line-clamp-4 mb-6">
-                    {program.description}
+                    {program.description[language]}
                   </p>
                 </div>
 

@@ -1,0 +1,3 @@
+5. Repeat for Other Components
+Use {language === "en" ? "English text" : "Hindi text"}
+wherever you want to show translated content.

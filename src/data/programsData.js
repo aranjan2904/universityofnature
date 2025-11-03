@@ -1,31 +1,33 @@
 const programData = [
   {
-    id: 1,
-    title: "CVP – Consciousness Development System",
-    description:
-      "Spreading awareness to live in harmony with nature through education and community involvement.",
-    img: "https://media.istockphoto.com/id/1435661952/photo/children-holding-a-planet-outdoors.webp?a=1&b=1&s=612x612&w=0&k=20&c=dtchJEtnyNUgN2rIEHBB2GiXp2iV4uTxLqpu87eB2bU=",
-    content: `The Consciousness Development System (CVP) is a pioneering initiative that aims to awaken environmental and ecological awareness among individuals and communities. It is based on the understanding that protecting nature begins with a shift in mindset—developing a deeper consciousness about the interconnectedness between humans and the natural world. Through CVP, the University of Nature creates opportunities for people of all ages and backgrounds to explore how their daily lives impact the environment, and how they can make meaningful changes to live more sustainably.
-
-The core of CVP involves educational workshops, nature camps, community dialogues, and mindfulness practices that promote reflection and action. Participants are guided through the philosophy of nature-centric living, where every element of the ecosystem—water, air, soil, animals, plants, and humans—is seen as part of a larger family. This approach fosters respect, gratitude, and responsibility toward Earth.
-
-CVP is not just theoretical. It involves hands-on experiences like tree planting, water conservation activities, organic farming demonstrations, and eco-craft workshops. The system encourages active participation, where individuals not only learn about sustainability but practice it within their homes and communities. School and college students, rural youth, women’s groups, and professionals have all been part of CVP programs, leading to grassroots-level transformation.
-
-Another key feature of CVP is its integration with employment-oriented activities. It offers skill-based training in sustainable agriculture, renewable energy, composting, natural product making, and more. These skills not only help the planet but also provide livelihoods, especially for youth and marginalized communities.
-
-CVP also nurtures community leaders and nature ambassadors who go on to replicate the system in their own villages or cities. They receive continued support and advanced training to strengthen their impact.
-
-The system is rooted in the ancient Indian philosophy of coexistence—‘Vasudhaiva Kutumbakam’—which means “the world is one family.” By combining traditional knowledge with modern ecological science, CVP becomes a holistic model of development that is spiritual, practical, and sustainable.
-
-Through its various levels—from beginner awareness programs to leadership development modules—CVP empowers people to see themselves as guardians of the Earth. Its long-term goal is to build a conscious, compassionate society that lives not in opposition to nature, but in cooperation with it.
-
-The success of CVP lies in its simplicity and depth. Whether you’re a student curious about the environment or a farmer facing climate challenges, CVP provides the tools, wisdom, and community to support your journey. As more people embrace this system, we move one step closer to creating a future where both humanity and nature can thrive together.`
+  id: 1,
+  title: {
+    en: "CVP – Cyclic Development Management System",
+    hi:  "CVP ( चक्रिय विकास संचलन प्रणाली)"
   },
+  description: {
+    en: "Building a sustainable link between people and nature through education, action, and cyclic growth.",
+    hi: "शिक्षा, कार्रवाई और चक्रीय विकास के माध्यम से लोगों और प्रकृति के बीच एक स्थायी लिंक बनाना।"
+  },
+  img: "https://media.istockphoto.com/id/1435661952/photo/children-holding-a-planet-outdoors.webp?a=1&b=1&s=612x612&w=0&k=20&c=dtchJEtnyNUgN2rIEHBB2GiXp2iV4uTxLqpu87eB2bU=",
+  content: `The Cyclic Development Management System (CVP) is a sustainable growth model that integrates human development with nature’s balance. It is based on the principle that true progress happens when every cycle of development restores, rather than exploits, the environment. CVP focuses on creating harmony between people and nature through awareness, education, and active participation.
+
+At its core, CVP promotes eco-friendly practices such as water conservation, afforestation, organic farming, and responsible use of natural resources. It brings communities together to protect and regenerate vital elements of life—water, soil, forests, and living beings. The system empowers individuals to understand the cyclic relationship between use and renewal, helping society move toward self-sufficiency and ecological stability.
+
+CVP also serves as a platform for skill-based, employment-oriented training in green practices—such as renewable energy, waste management, and sustainable agriculture. By combining traditional knowledge with modern science, it creates opportunities for livelihood while ensuring environmental protection.
+
+Through awareness programs, workshops, and collaborative projects, CVP encourages every individual to take part in the ongoing cycle of development and restoration. Its goal is to build conscious communities that work with nature, not against it—ensuring a future where growth and conservation exist in perfect balance.`,
+},
   {
     id: 2,
-    title: "Water, Forest & Life Protection Course",
-    description:
-      "Learn how to protect vital resources like water, forests, land, and life with practical training.",
+    title: {
+      en: "Water, Forest & Life Protection Course",
+      hi: "जल, वन और जीवन संरक्षण पाठ्यक्रम"
+    },
+    description: {
+      en: "Learn how to protect vital resources like water, forests, land, and life with practical training.",
+      hi: "व्यावहारिक प्रशिक्षण के साथ जल, वन, भूमि और जीवन जैसे महत्वपूर्ण संसाधनों की रक्षा करना सीखें।"
+    },
     img: "https://media.istockphoto.com/id/1412012308/photo/environment-earth-day-in-the-hands-holding-green-earth-on-bokeh-green-background-saving.webp?a=1&b=1&s=612x612&w=0&k=20&c=trv5LWf4VjRcIrRwkG7S956C1y_X5-0UAT_59krtNds=",
     content: `This course is designed to address the urgent need for the conservation of natural resources, focusing specifically on water, forests, and life. The Water, Forest & Life Protection Course combines theoretical understanding with real-world application to educate participants on the significance and vulnerability of these vital elements.
 
@@ -47,9 +49,14 @@ Ultimately, the course is not just about saving trees and rivers—it’s about 
   },
   {
     id: 3,
-    title: "Three-Layer Farming",
-    description:
-      "Sustainable agriculture technique that increases yield by using multi-level crop systems.",
+    title: {
+      en: "Three-Layer Farming",
+      hi: "तीन-स्तरीय खेती"
+    },
+    description: {
+      en: "Sustainable agriculture technique that increases yield by using multi-level crop systems.",
+      hi: "सतत कृषि तकनीक जो बहु-स्तरीय फसल प्रणालियों का उपयोग करके उपज बढ़ाती है।"
+    },
     img: "https://plus.unsplash.com/premium_photo-1710787193520-74df05ed7736?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG11bHRpJTIwbGF5ZXIlMjBmYXJtaW5nfGVufDB8fDB8fHww",
     content: `Three-layer farming is a sustainable and innovative agricultural model that maximizes land use, improves productivity, and promotes ecological balance. By integrating different crops at three vertical levels, this method not only ensures higher income for farmers but also supports soil health, biodiversity, and climate resilience.
 
@@ -71,9 +78,14 @@ Three-layer farming is more than a technique—it is a movement towards harmony 
   },
   {
     id: 4,
-    title: "Multi-dimensional Nature Curriculum",
-    description:
-      "A nature-focused educational path for conservation, awareness, and self-reliance.",
+    title: {
+      en: "Multi-dimensional Nature Curriculum",
+      hi: "बहुआयामी प्रकृति पाठ्यक्रम"
+    },
+    description: {
+      en: "A nature-focused educational path for conservation, awareness, and self-reliance.",
+      hi: "संरक्षण, जागरूकता और आत्मनिर्भरता के लिए एक प्रकृति-केंद्रित शैक्षिक पथ।"
+    },
     img: "https://images.unsplash.com/photo-1495584816685-4bdbf1b5057e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D",
     content: `The Multi-dimensional Nature Curriculum (MNC) is an integrated educational framework designed to build ecological consciousness from a young age. It combines the best of traditional wisdom, experiential learning, and scientific inquiry to offer a transformative journey into the world of nature.
 
