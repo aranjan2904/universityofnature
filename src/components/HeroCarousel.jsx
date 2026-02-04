@@ -6,8 +6,12 @@ import "swiper/css/pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import heroSlides from "../data/heroSlides";
+import { useLanguage } from "./LanguageContext";
+import { getText } from "../data/i18n";
 
 function HeroCarousel() {
+  const { language } = useLanguage();
+
   return (
     <div className="w-full bg-gradient-to-b from-blue-50 via-white to-green-50 py-4 sm:py-6 lg:py-10">
       <div className="relative">
@@ -42,7 +46,7 @@ function HeroCarousel() {
                 <div className="w-full max-w-4xl mx-auto h-[280px] sm:h-[350px] md:h-[420px] flex items-center justify-center bg-white/90 rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl overflow-hidden border border-blue-100/50">
                   <img
                     src={slide.image}
-                    alt={slide.heading || "Nature"}
+                    alt={slide.heading || getText(language, "generic_nature")}
                     className="object-cover w-full h-full transition-transform duration-700 ease-out"
                     loading="eager"
                   />

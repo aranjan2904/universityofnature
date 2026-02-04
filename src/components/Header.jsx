@@ -3,6 +3,7 @@ import logo from "../assets/logo.jpg";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "./LanguageContext";
+import { getText } from "../data/i18n";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,35 +36,38 @@ function Header() {
         >
           <img
             src={logo}
-            alt="logo"
+            alt={getText(language, "brand_name")}
             className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover border border-green-600 shadow-sm"
           />
           <span className="text-lg sm:text-xl font-bold text-gray-800 tracking-tight">
-            University of Nature
+            {getText(language, "brand_name")}
           </span>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-2">
           <NavLink to="/" className={linkClass}>
-            Home
+            {getText(language, "nav_home")}
           </NavLink>
           <NavLink to="/programs" className={linkClass}>
-            Programs
+            {getText(language, "nav_programs")}
           </NavLink>
           <NavLink
             to="/mission"
             className={mobileLinkClass}
             onClick={handleLinkClick}
           >
-            Our Mission
+            {getText(language, "nav_mission")}
           </NavLink>
 
           <NavLink to="/faculty" className={linkClass}>
-            Faculty
+            {getText(language, "nav_faculty")}
+          </NavLink>
+          <NavLink to="/gallery" className={linkClass}>
+            {getText(language, "nav_gallery")}
           </NavLink>
           <NavLink to="/contact" className={linkClass}>
-            Contact
+            {getText(language, "nav_contact")}
           </NavLink>
         </nav>
 
@@ -75,7 +79,7 @@ function Header() {
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">{getText(language, "nav_open_menu")}</span>
               {isOpen ? (
                 <X className="block h-6 w-6" aria-hidden="true" />
               ) : (
@@ -88,7 +92,7 @@ function Header() {
             <div
               className="relative w-16 h-8 rounded-full cursor-pointer bg-gradient-to-r from-green-500 to-blue-500 p-1 shadow-inner"
               onClick={() => setLanguage(language === "en" ? "hi" : "en")}
-              aria-label="Toggle language"
+              aria-label={getText(language, "nav_toggle_language")}
             >
               <div
                 className={`absolute top-1 w-6 h-6 bg-white rounded-full shadow-lg transform transition-all duration-300 flex items-center justify-center ${
@@ -116,28 +120,35 @@ function Header() {
       >
         <nav className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
           <NavLink to="/" className={mobileLinkClass} onClick={handleLinkClick}>
-            Home
+            {getText(language, "nav_home")}
           </NavLink>
           <NavLink
             to="/programs"
             className={mobileLinkClass}
             onClick={handleLinkClick}
           >
-            Programs
+            {getText(language, "nav_programs")}
           </NavLink>
           <NavLink
             to="/mission"
             className={mobileLinkClass}
             onClick={handleLinkClick}
           >
-            Our Mission
+            {getText(language, "nav_mission")}
           </NavLink>
           <NavLink
             to="/faculty"
             className={mobileLinkClass}
             onClick={handleLinkClick}
           >
-            Faculty
+            {getText(language, "nav_faculty")}
+          </NavLink>
+          <NavLink
+            to="/gallery"
+            className={mobileLinkClass}
+            onClick={handleLinkClick}
+          >
+            {getText(language, "nav_gallery")}
           </NavLink>
           {/* <NavLink to="/blog" className={mobileLinkClass} onClick={handleLinkClick}>Blog</NavLink> */}
           <NavLink
@@ -145,7 +156,7 @@ function Header() {
             className={mobileLinkClass}
             onClick={handleLinkClick}
           >
-            Contact
+            {getText(language, "nav_contact")}
           </NavLink>
         </nav>
       </div>

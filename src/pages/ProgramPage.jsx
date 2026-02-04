@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 import programData from "../data/programsData";
+import { useLanguage } from "../components/LanguageContext";
+import { getText } from "../data/i18n";
 
 function ProgramPage() {
+  const { language } = useLanguage();
   const { id } = useParams();
   const program = programData.find((p) => p.id.toString() === id);
 
@@ -9,8 +12,10 @@ function ProgramPage() {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-50">
         <div className="text-center p-8 bg-white rounded-xl shadow-lg max-w-md">
-          <h1 className="text-3xl font-bold text-gray-800 mb-4">404 - Page Not Found</h1>
-          <p className="text-gray-600">The program you're looking for doesn't exist.</p>
+          <h1 className="text-3xl font-bold text-gray-800 mb-4">
+            {getText(language, "program_not_found_title")}
+          </h1>
+          <p className="text-gray-600">{getText(language, "program_not_found_desc")}</p>
         </div>
       </div>
     );
@@ -24,12 +29,12 @@ function ProgramPage() {
           <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden">
             <img 
               src={program.img} 
-              alt={program.title}
+              alt={program.title?.[language] ?? program.title?.en ?? program.title}
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 sm:p-8">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-                {program.title}
+                {program.title?.[language] ?? program.title?.en ?? program.title}
               </h1>
             </div>
           </div>
@@ -37,7 +42,9 @@ function ProgramPage() {
           {/* Content section */}
           <div className="p-6 sm:p-8">
             <div className="prose max-w-none text-gray-700">
-              {program.content.split('\n').map((paragraph, index) => (
+              {(program.content?.[language] ?? program.content)
+                .split("\n")
+                .map((paragraph, index) => (
                 <p key={index} className="mb-4 last:mb-0">{paragraph}</p>
               ))}
             </div>
@@ -45,7 +52,7 @@ function ProgramPage() {
             {/* Optional CTA button */}
             <div className="mt-8">
               <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-200">
-                Enroll Now
+                {getText(language, "program_enroll")}
               </button>
             </div>
           </div>
